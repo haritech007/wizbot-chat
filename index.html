@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Demo - Wizbot (A customisable chat bot)</h1>
+
+<!-- Include the widget -->
+<script type="text/javascript">
+	(function(w, i, z, b, o, t) {
+		var a, m;
+		w['wizbotObject'] = o;
+		w[o] = w[o] || function() {
+			(w[o].q = w[o].q || []).push(arguments)
+		}, w[o].l = 1 * t;
+		w[o].h = b;
+		a = i.createElement(z), m = i.getElementsByTagName(z)[0];
+		a.defer = 1;
+		a.src = b;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', './wizbot.js?v=1', 'wizbot', new Date());
+
+	// Intialize the widget
+	wizbot({
+		theme: "#fff",
+		chatAutoStart: false,
+		disableUserInput: true,
+		botName: ["Kartik", "Anchal"],
+		apiHost: "https://webhook.site/5e994831-b998-434c-8669-5fd675c2d4ce",
+		align: "right",
+		defQuestionsList: "questions",
+		questions: [{
+			i: 0,
+			q: "Hello! Nice to see you here, please select your preferred language.<br>नमस्कार! आप किस भाषा में बात करना चाहते हैं?",
+			t: "r",
+			qType: "lang",
+			o: [{
+				l: "English",
+				v: "en"
+			}, {
+				l: "हिंदी",
+				v: "hi"
+			}, ]
+		}, {
+			i: 1,
+			q: "May I know your name please?",
+			t: "f",
+			qType: "name",
+			o: [{
+				l: "Name",
+				v: "",
+				ltype: "name",
+				vType: "text"
+			}, ]
+		}, {
+			i: 2,
+			q: "{name} please give us your contact number, we 'll reach you on phone incase if we get disconnected here",
+			t: "f",
+			qType: "lead",
+			o: [{
+				l: "Mobile",
+				v: "",
+				ltype: "mobile",
+				vType: "mobile"
+			}, ]
+		}, {
+			i: 3,
+			q: "In which city you are looking property?",
+			t: "d",
+			qType: "city",
+			o: [{
+				l: "New Delhi",
+				v: "8787878787"
+			}, {
+				l: "Gurugram",
+				v: "58585858585"
+			}]
+		}, {
+			i: 4,
+			q: "What kind of property are you looking for?",
+			t: "c",
+			qType: "propType",
+			o: [{
+				l: "Apartment",
+				v: "Apartment",
+				n: 5
+			}, {
+				l: "Villa",
+				v: "IndependentHouseVilla",
+				n: 5
+			}, {
+				l: "Independent Floor",
+				v: "IndependentFloor",
+				n: 5
+			}, {
+				l: "Plot",
+				v: "Land",
+				n: 6
+			}, {
+				l: "Commercial",
+				v: "Shop",
+				n: 6
+			}, ]
+		}, {
+			i: 5,
+			q: "Please select number of BHK?",
+			t: "c",
+			qType: "bhk",
+			o: [{
+				l: "1 bhk",
+				v: "1"
+			}, {
+				l: "2 bhk",
+				v: "2"
+			}, {
+				l: "3 bhk",
+				v: "3"
+			}, {
+				l: "3+ bhk",
+				v: "4"
+			}, ]
+		}, {
+			i: 6,
+			q: "Please select an area size",
+			t: "d",
+			qType: "area",
+			o: [{
+				l: "upto 500 Sq.ft",
+				v: "500"
+			}, {
+				l: "upto 1000 Sq.ft",
+				v: "1000"
+			}, {
+				l: "upto 1500 Sq.ft",
+				v: "1500"
+			}, {
+				l: "upto 2000 Sq.ft",
+				v: "2000"
+			}, {
+				l: "above 2000 Sq.ft",
+				v: "6000"
+			}, ]
+		}, {
+			i: 7,
+			q: "{name} please enter your maximum budget",
+			t: "d",
+			qType: "budget",
+			o: [{
+				l: "upto ₹15 L",
+				v: "1500000"
+			}, {
+				l: "upto ₹30 L",
+				v: "3000000"
+			}, {
+				l: "upto ₹40 L",
+				v: "4000000"
+			}, {
+				l: "upto ₹50 L",
+				v: "5000000"
+			}, {
+				l: "upto ₹60 L",
+				v: "6000000"
+			}, {
+				l: "upto ₹70 L",
+				v: "7000000"
+			}, {
+				l: "upto ₹80 L",
+				v: "8000000"
+			}, {
+				l: "upto ₹1 Cr",
+				v: "10000000"
+			}, {
+				l: "above ₹1 Cr",
+				v: "21000000"
+			}, ]
+		}, {
+			i: 8,
+			q: "Preferred project status",
+			t: "c",
+			qType: "propStatus",
+			o: [{
+				l: "Ready to move in",
+				v: "ReadyToMove"
+			}, {
+				l: "Under Construction",
+				v: "InProgress"
+			}, {
+				l: "New Launch",
+				v: "NotStarted"
+			}, {
+				l: "Upcoming",
+				v: "UpComing"
+			}, ]
+		}, {
+			i: 9,
+			q: "How soon you want to buy?",
+			t: "r",
+			qType: "leadStatus",
+			o: [{
+				l: "within a week",
+				v: "1"
+			}, {
+				l: "within a month",
+				v: "2"
+			}, {
+				l: "within 1-4 months",
+				v: "3"
+			}, {
+				l: "above 4 months",
+				v: "4"
+			}, ]
+		}, {
+			i: 10,
+			q: "Thank you {name} for contacting us.",
+			t: "i",
+			isLast: true,
+			o: []
+		}, {
+			i: 11,
+			q: "Our executive will contact you soon for your queries",
+			t: "i",
+			o: []
+		}],
+		questionsHindi: [{
+			i: 0,
+			qType: "lang",
+			q: "Hello! Nice to see you here, please select your preferred language.<br>नमस्कार! आप किस भाषा में बात करना चाहते हैं?",
+			t: "r",
+			o: [{
+				l: "English",
+				v: "en"
+			}, {
+				l: "हिंदी",
+				v: "hi"
+			}, ]
+		}, {
+			i: 1,
+			q: "आपका शुभ नाम ?",
+			t: "f",
+			qType: "name",
+			o: [{
+				l: "नाम",
+				v: "",
+				ltype: "name",
+				vType: "text"
+			}, ]
+		}, {
+			i: 2,
+			q: "{name} जी,  कृपया अपना मोबाइल नंबर बताएं।",
+			t: "f",
+			qType: "lead",
+			o: [{
+				l: "मोबाइल नंबर",
+				v: "",
+				ltype: "mobile",
+				vType: "mobile"
+			}, ]
+		}, {
+			i: 3,
+			q: "आप किस शहर में संपत्ति खरीदना चाहते हैं।",
+			t: "d",
+			qType: "city",
+			o: [{
+				l: "New Delhi",
+				v: "8787878787"
+			}, {
+				l: "Gurugram",
+				v: "58585858585"
+			}]
+		}, {
+			i: 4,
+			q: "और किस प्रकार की संपत्ति देख रहे हैं?",
+			t: "c",
+			qType: "propType",
+			o: [{
+				l: "अपार्टमेंट",
+				v: "Apartment",
+				n: 5
+			}, {
+				l: "विला",
+				v: "IndependentHouseVilla",
+				n: 5
+			}, {
+				l: "इंडिपेंडेंट फ्लोर",
+				v: "IndependentFloor",
+				n: 5
+			}, {
+				l: "प्लॉट",
+				v: "Land",
+				n: 6
+			}, {
+				l: "व्यावसायिक",
+				v: "Shop",
+				n: 6
+			}, ]
+		}, {
+			i: 5,
+			q: "कितने कमरों की संपत्ति देख रहे हैं?",
+			t: "c",
+			qType: "bhk",
+			o: [{
+				l: "1 bhk",
+				v: "1"
+			}, {
+				l: "2 bhk",
+				v: "2"
+			}, {
+				l: "3 bhk",
+				v: "3"
+			}, {
+				l: "3+ bhk",
+				v: "4"
+			}, ]
+		}, {
+			i: 6,
+			q: "कितने स्क्वायर फ़ीट तक की संपत्ति खरीदना चाहते हैं?",
+			t: "d",
+			qType: "area",
+			o: [{
+				l: "500 sqft तक",
+				v: "500"
+			}, {
+				l: "1000 sqft तक",
+				v: "1000"
+			}, {
+				l: "1500 sqft तक",
+				v: "1500"
+			}, {
+				l: "2000 sqft तक",
+				v: "2000"
+			}, {
+				l: "2000 sqft से ऊपर",
+				v: "6000"
+			}, ]
+		}, {
+			i: 7,
+			q: "{name} जी  कृपया अपना अधिकतम बजट बताइये।",
+			t: "d",
+			qType: "budget",
+			o: [{
+				l: "₹ 15 लाख तक",
+				v: "1500000"
+			}, {
+				l: "₹ 30 लाख तक",
+				v: "3000000"
+			}, {
+				l: "₹ 40 लाख तक",
+				v: "4000000"
+			}, {
+				l: "₹ 50 लाख तक",
+				v: "5000000"
+			}, {
+				l: "₹ 60 लाख तक",
+				v: "6000000"
+			}, {
+				l: "₹ 70 लाख तक",
+				v: "7000000"
+			}, {
+				l: "₹ 80 लाख तक",
+				v: "8000000"
+			}, {
+				l: "₹ 1 करोड़ तक",
+				v: "10000000"
+			}, {
+				l: "₹ 1 करोड़ से ऊपर",
+				v: "21000000"
+			}, ]
+		}, {
+			i: 8,
+			q: "कृपया चयनित संपत्ति की पसंदीदा स्थिति चुनें।",
+			t: "c",
+			qType: "propStatus",
+			o: [{
+				l: "गृह प्रवेश को तैयार",
+				v: "ReadyToMove"
+			}, {
+				l: "निर्माणाधीन",
+				v: "InProgress"
+			}, {
+				l: "नई लॉन्च",
+				v: "NotStarted"
+			}, {
+				l: "आगामी",
+				v: "UpComing"
+			}, ]
+		}, {
+			i: 9,
+			q: "आप कितनी जल्दी संपत्ति खरीदना चाहते हैं?",
+			t: "r",
+			qType: "leadStatus",
+			o: [{
+				l: "एक सप्ताह के भीतर",
+				v: "1"
+			}, {
+				l: "एक महीने के भीतर",
+				v: "2"
+			}, {
+				l: "1-4 महीने के भीतर",
+				v: "3"
+			}, {
+				l: "4 महीने से ऊपर",
+				v: "4"
+			}, ]
+		}, {
+			i: 10,
+			q: "{name} जी! हमसे संपर्क करने के लिए धन्यवाद।",
+			t: "i",
+			isLast: true,
+			o: []
+		}, {
+			i: 11,
+			q: "हमारे संबंधित कार्यकर्ता आपके प्रश्नों के लिए आपसे जल्द ही संपर्क करेंगे।",
+			t: "i",
+			o: []
+		}]
+	});
+  </script>
+</body>
+</html>
