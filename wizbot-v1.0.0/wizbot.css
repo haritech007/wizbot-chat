@@ -82,7 +82,7 @@
   max-height: 500px;
   background-color: #fff;
   overflow: auto;
-  background-image: url(../wizbot/wizbot-bg-2.webp);
+  background-image: url(./wizbot-v1.0.0/wizbot-bg-2.webp);
 }
 ._hmtChat ._hmtChatContainer ._hmtChatList {
   list-style: none;

@@ -894,7 +894,7 @@
                 message: "unable_to_load_chatbot_ui"
             });
         };
-        xhttp.open("GET", "./wizbot-template.html?v=" + globalSettings.version, true);
+        xhttp.open("GET", "./wizbot-v1.0.0/wizbot-template.html?v=" + globalSettings.version, true);
         xhttp.send();
     } // end of createUI
 
@@ -905,7 +905,7 @@
 
         css.setAttribute("rel", "stylesheet");
         css.setAttribute("type", "text/css");
-        css.setAttribute("href", "./wizbot.css?v=" + globalSettings.version);
+        css.setAttribute("href", "./wizbot-v1.0.0/wizbot.css?v=" + globalSettings.version);
 
         css.onerror = function(){
             console.log("ChatBot css not loaded...");
