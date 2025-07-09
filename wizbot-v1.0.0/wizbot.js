@@ -824,7 +824,7 @@
         }
         var reqObj = {
             type: "GET",
-            url: __.location.origin + "/citylist.json?v=" + globalSettings.version,
+            url: "./wizbot-v1.0.0/citylist.json?v=" + globalSettings.version,
             data:{
                 live: true
             }
